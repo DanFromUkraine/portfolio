@@ -1,16 +1,11 @@
-import Logo from "../Logo";
-import Email from "../utils/Email";
+import Info from "./Info";
+import Media from "./Media";
 
 export default function Footer() {
         return (
-                <footer className="mt-auto">
-                        <section className="flex flex-col gap-3">
-                                <section className="flex gap-3">
-                                        <Logo />
-                                        <Email />
-                                </section>
-                                <p>React Front-end Developer</p>
-                        </section>
+                <footer className="mt-auto flex justify-between">
+                        <Info />
+                        <Media />
                 </footer>
         );
 }
