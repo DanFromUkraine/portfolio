@@ -40,7 +40,7 @@ export default function ChangeLanguage() {
                                         "w-full"
                                 )}
                         >
-                                <span className="border-secondary border absolute p-2">
+                                <span className="gray-border absolute p-2">
                                         {getOpositeLang(language).toLocaleUpperCase()}
                                 </span>
                         </span>

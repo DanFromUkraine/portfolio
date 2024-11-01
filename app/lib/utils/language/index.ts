@@ -5,3 +5,7 @@ export function getOpositeLang(
 ): LANGUAGES_AVAILABLE {
         return currLang === "en" ? "ua" : "en";
 }
+
+export function changeUaToUkOrJustReturn(lang: LANGUAGES_AVAILABLE): string { // change ua to uk or just return
+        return lang === "ua" ? "uk" : lang;
+}

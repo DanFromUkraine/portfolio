@@ -6,17 +6,17 @@ import Cube from "./Cube";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
-function useOutput(variation: boolean[]) {
+function useOutput() {
         const [output, setOutput] = useState<ReactNode[]>([]);
 
-        const fillUpOutput = useCallback(() => {
+        const fillUpOutput = useCallback((variation: boolean[]) => {
                 setOutput([]);
                 setOutput(
                         variation.map((isVisible, i) => (
                                 <Cube key={i} visible={isVisible} />
                         ))
                 );
-        }, [variation]);
+        }, []);
 
         return [output, fillUpOutput] as const;
 }
@@ -37,10 +37,10 @@ function useVariation() {
 
 export default function RenderCubes() {
         const [variation, toggleVariation] = useVariation();
-        const [output, fillUpOutput] = useOutput(variation);
+        const [output, fillUpOutput] = useOutput();
 
         useEffect(() => {
-                fillUpOutput();
+                fillUpOutput(variation);
                 const interval = setInterval(() => {
                         toggleVariation();
                 }, 4000);
@@ -48,7 +48,7 @@ export default function RenderCubes() {
                 return () => {
                         clearInterval(interval);
                 };
-        }, [fillUpOutput, toggleVariation]);
+        }, [fillUpOutput, toggleVariation, variation]);
 
         return <GSAPcubeAnimationWrapper>{output}</GSAPcubeAnimationWrapper>;
 }
@@ -62,6 +62,7 @@ function GSAPcubeAnimationWrapper({
 
         useGSAP(
                 () => {
+                        gsap.killTweensOf(".cube-item")
                         gsap.to(".cube-item", {
                                 opacity: 1,
                                 stagger: 0.1,
