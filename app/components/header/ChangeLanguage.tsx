@@ -26,6 +26,8 @@ export default function ChangeLanguage() {
                 <section
                         className="flex flex-col items-center justify-center relative w-11"
                         onClick={toggleIsMenuOpened}
+                        onKeyDown={toggleIsMenuOpened}
+                        role="button"
                 >
                         <span className="flex">
                                 <span className="font-semibold">
@@ -35,6 +37,7 @@ export default function ChangeLanguage() {
                         </span>
                         <span
                                 onClick={toggleLanguage}
+                                onKeyDown={toggleLanguage}
                                 className={clsx(
                                         { hidden: !isMenuOpened },
                                         "w-full"

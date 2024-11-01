@@ -8,18 +8,22 @@ import CopiedMessage from "./CopiedMessage";
 
 export default function Email() {
         const [isVisible, setIsVisible] = useState(false);
-        const onClick = useCallback(() => {
-                navigator.clipboard.writeText(EMAIL);
+        const onClick = useCallback(async () => {
+                await navigator.clipboard.writeText(EMAIL);
                 setIsVisible(true);
                 setTimeout(() => {
                         setIsVisible(false);
                 }, 2500);
         }, []);
         return (
-                <span className="flex gap-2 items-center cursor-copy" onClick={onClick}>
+                <button
+                        className="flex gap-2 items-center cursor-copy"
+                        onClick={onClick}
+                        onKeyDown={onClick}
+                >
                         <AlternateEmailOutlinedIcon sx={{ color: SECONDARY }} />
                         <span>{EMAIL}</span>
                         <CopiedMessage visible={isVisible} />
-                </span>
+                </button>
         );
 }
