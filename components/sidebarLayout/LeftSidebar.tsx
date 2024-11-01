@@ -1,9 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default function LeftSidebar() {
-  return (
-    <aside className='h-full'>
-        
-    </aside>
-  )
+        return <aside className="h-full"></aside>;
 }

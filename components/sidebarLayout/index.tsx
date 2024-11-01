@@ -1,9 +1,5 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
-export default function SidebarLayout({
-  children,
-}: {
-  children: React.ReactDOM;
-}) {
-  return <div>index</div>;
+export default function SidebarLayout({ children }: { children: ReactNode }) {
+        return <div>{children}</div>;
 }

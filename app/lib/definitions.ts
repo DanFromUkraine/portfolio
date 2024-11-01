@@ -1,5 +1,4 @@
-
 export type LinkType = {
-    href: string;
-    label: string;
-}
+        href: string;
+        label: string;
+};

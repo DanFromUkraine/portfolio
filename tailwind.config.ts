@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { SECONDARY } from "./components/constants/colors";
 
 const config: Config = {
   content: [
@@ -9,7 +10,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        main_bg: "#282C33"
+        main_bg: "#282C33",
+        purple: "#C778DD",
+        secondary: SECONDARY,
+        secondary_hover: "#CACDD2"
       },
     },
   },

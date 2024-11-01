@@ -3,7 +3,7 @@ import NavLink from "./NavLink";
 
 export default function NavLinks() {
   return (
-    <nav>
+    <nav className="flex gap-8">
       {NavLinksContent.map((linkContent, i) => (
         <NavLink linkContent={linkContent} key={i} />
       ))}
