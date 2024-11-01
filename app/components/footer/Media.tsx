@@ -1,6 +1,6 @@
 import GitHubIcon from "@mui/icons-material/GitHub";
 import TelegramIcon from "@mui/icons-material/Telegram";
-import HoverIcon from "../utils/HoverIcon";
+import HoverLinkIcon from "../utils/HoverLinkIcon";
 
 export default function Media() {
         return (
@@ -8,10 +8,10 @@ export default function Media() {
                         <h2>Media</h2>
                         <ul className="flex gap-2">
                                 <li role="link">
-                                        <HoverIcon Icon={GitHubIcon} />
+                                        <HoverLinkIcon href="https://github.com/DanFromUkraine" Icon={GitHubIcon} />
                                 </li>
                                 <li role="link">
-                                        <HoverIcon Icon={TelegramIcon} />
+                                        <HoverLinkIcon href="" Icon={TelegramIcon} />
                                 </li>
                         </ul>
                 </section>
