@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactNode, useCallback, useEffect, useRef, useState } from "react";
-import { CUBE_VARIATION1, CUBE_VARIATION2 } from "../constants/logo";
+import { CUBE_VARIATION1, CUBE_VARIATION2 } from "../../lib/constants/logo";
 import Cube from "./Cube";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";

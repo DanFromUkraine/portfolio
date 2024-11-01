@@ -16,7 +16,7 @@ export default function NavLink({
         return (
                 <Link href={href}>
                         <HashtagLabel
-                                className={clsx("text-base", {
+                                className={clsx("text-base transition duration-100", {
                                         "last:!text-white": isLinkToCurrPath,
                                 })}
                         >

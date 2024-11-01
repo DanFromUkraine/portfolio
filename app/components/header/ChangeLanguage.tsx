@@ -1,10 +1,11 @@
 "use client";
-import ExpandLessIcon from "@mui/icons-material/ExpandLess";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import clsx from "clsx";
-import { useCallback, useState } from "react";
-import { SECONDARY } from "../constants/colors";
+import { useCallback, useContext, useState } from "react";
+import { LangContextProvider } from "@/app/lib/context";
+import { LangProviderValueType } from "@/app/lib/definitions";
+import { getOpositeLang } from "@/app/lib/utils/language";
+import IconShown from "./ChangeLangIconShown";
 
 function useMenuOpened() {
         const [isMenuOpened, setIsMenuOpened] = useState(false);
@@ -15,26 +16,11 @@ function useMenuOpened() {
         return [isMenuOpened, toggleIsMenuOpened] as const;
 }
 
-function IconShown({ isMenuOpened }: { isMenuOpened: boolean }) {
-        const output = isMenuOpened ? (
-                <ExpandLessIcon sx={{ color: SECONDARY }} />
-        ) : (
-                <ExpandMoreIcon sx={{ color: SECONDARY }} />
-        );
-        return output;
-}
-
-function getOpositeLang(currLang: string) {
-        return currLang === "EN" ? "UA" : "EN";
-}
-
 export default function ChangeLanguage() {
-        const [currLang, setCurrLang] = useState("EN");
         const [isMenuOpened, toggleIsMenuOpened] = useMenuOpened();
-
-        const toggleCurrLang = useCallback(() => {
-                setCurrLang((prev) => getOpositeLang(prev));
-        }, []);
+        const { Lang } = LangContextProvider;
+        const { language, toggleLanguage }: LangProviderValueType =
+                useContext(Lang);
 
         return (
                 <section
@@ -42,18 +28,20 @@ export default function ChangeLanguage() {
                         onClick={toggleIsMenuOpened}
                 >
                         <span className="flex">
-                                <span className="font-semibold"> {currLang}</span>
+                                <span className="font-semibold">
+                                        {language.toLocaleUpperCase()}
+                                </span>
                                 <IconShown isMenuOpened={isMenuOpened} />
                         </span>
                         <span
-                                onClick={toggleCurrLang}
+                                onClick={toggleLanguage}
                                 className={clsx(
                                         { hidden: !isMenuOpened },
                                         "w-full"
                                 )}
                         >
                                 <span className="border-secondary border absolute p-2">
-                                        {getOpositeLang(currLang)}
+                                        {getOpositeLang(language).toLocaleUpperCase()}
                                 </span>
                         </span>
                 </section>
