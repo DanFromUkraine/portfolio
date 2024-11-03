@@ -1,11 +1,10 @@
 import React, { ReactNode } from "react";
 
-import Header from "@/app/components/header";
 import "./globals.css";
 import HTMLAndBodyLayout from "./components/HTML&bodyLayout";
 import { LangContextProvider } from "./lib/context";
-import Footer from "./components/footer";
 import SidebarLayout from "./components/sidebarLayout";
+import Main from "./components/Main";
 
 export default function layout({
         children,
@@ -14,11 +13,7 @@ export default function layout({
                 <LangContextProvider.LangProvider>
                         <HTMLAndBodyLayout>
                                 <SidebarLayout>
-                                        <main className="p-4 flex flex-col items-center justify-center [&>*]:w-[76vw] min-h-screen">
-                                                <Header />
-                                                <div>{children}</div>
-                                                <Footer />
-                                        </main>
+                                        <Main>{children}</Main>
                                 </SidebarLayout>
                         </HTMLAndBodyLayout>
                 </LangContextProvider.LangProvider>

@@ -10,7 +10,7 @@ export const MEDIA_LINKS: MediaLinkType[] = [
                 id: 1
         },
         {
-                href: "t.me/@Dan_from_Ukraine",
+                href: "https://tttttt.me/DanFromUkraine",
                 Icon: Telegram,
                 id: 2
         },

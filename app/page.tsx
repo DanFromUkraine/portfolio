@@ -1,5 +1,8 @@
 import React from "react";
+import HeroSection from "./sections/hero";
 
 export default function page() {
-        return <div>page</div>;
+        return <div>
+                <HeroSection />
+        </div>;
 }

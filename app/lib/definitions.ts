@@ -21,3 +21,13 @@ export type LangProviderValueType = {
 };
 
 
+export type AvailableGridColsSizes = "small" | "big";
+export type AvailableGridRowsSizes = "small" | "medium" | "big";
+
+export type sizePropValue = {
+    numb: number;
+    class: string;
+};
+
+export type GridColsType = Record<AvailableGridColsSizes, sizePropValue>;
+export type GridRowsType = Record<AvailableGridRowsSizes, sizePropValue>;
