@@ -1,6 +1,6 @@
 import Image from "next/image";
 import WorkingOn from "./WorkingOn";
-import CubeInDots, { Dot } from "../utils/CubeInDots";
+import CubeInDots from "../utils/CubeInDots";
 
 export default function HeroImg() {
     return (
