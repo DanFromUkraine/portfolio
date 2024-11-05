@@ -1,6 +1,6 @@
 import React from "react";
 import PurpleCube from "./PurpleCube";
-import Bold from "../utils/Bold";
+import Bold from "../../utils/Bold";
 
 export default function WorkingOn() {
     return (

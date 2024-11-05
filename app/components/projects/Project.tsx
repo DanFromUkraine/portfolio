@@ -3,7 +3,7 @@ import Image from "next/image";
 import TechStackList from "./TechStackList";
 import ProjectTitle from "./ProjectTitle";
 import ProjectDescription from "./ProjectDescription";
-import LiveButton from "./LiveButton";
+import ButtonLive from "./ButtonLive";
 
 export default function Project({
     project: { title, description, techStack, imageUrl, githubUrl },
@@ -23,7 +23,7 @@ export default function Project({
             <div className="p-4 flex flex-col gap-4">
                 <ProjectTitle>{title}</ProjectTitle>
                 <ProjectDescription>{description}</ProjectDescription>
-                <LiveButton githubUrl={githubUrl} />
+                <ButtonLive githubUrl={githubUrl} />
             </div>
         </div>
     );

@@ -27,11 +27,12 @@ export default function CubeInDots({
     const amountOfDots = colsObj.numb * rowsObj.numb;
 
     useEffect(() => {
-        const timeout = setTimeout(() => {
-            const tl = gsap.timeline();
-            tl.from(".cube", {
+        const tl = gsap.timeline();
+        tl.delay(1.5)
+            .from(".cube", {
                 opacity: 0,
-            }).to(".cube", {
+            })
+            .to(".cube", {
                 opacity: 1,
                 duration: 0.3,
                 stagger: {
@@ -41,11 +42,6 @@ export default function CubeInDots({
                     repeat: 0.1,
                 },
             });
-        }, 1000);
-
-        return () => {
-            clearTimeout(timeout);
-        };
     }, []);
 
     return (
@@ -54,9 +50,11 @@ export default function CubeInDots({
                 className,
                 colsObj.class,
                 rowsObj.class,
-                "grid gap-4 absolute  w-fit h-fit"
+                "grid gap-4 absolute  w-fit h-fit",
+                {
+                    "gap-2.5": xSize === "medium"
+                }
             )}
-            
         >
             {new Array(amountOfDots).fill(null).map((_, i) => (
                 <Dot key={i} />

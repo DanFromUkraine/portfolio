@@ -1,6 +1,6 @@
-import BlockLine from "../utils/BlockLine";
-import Button from "../utils/Button";
-import PurpleText from "../utils/PurpleText";
+import BlockLine from "../../utils/BlockLine";
+import Button from "../../utils/Button";
+import PurpleText from "../../utils/PurpleText";
 
 export default function HeroInfo() {
     return (

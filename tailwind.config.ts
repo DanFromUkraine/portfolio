@@ -15,6 +15,11 @@ const config: Config = {
                 secondary: SECONDARY,
                 secondary_hover: SECONDARY_HOVER,
             },
+            spacing: {
+                "big-simp-cube": "9.6rem",
+                "mid-simp-cube": "5.375rem",
+                "sm-simp-cube": "3.25rem",
+            },
         },
     },
     plugins: [],

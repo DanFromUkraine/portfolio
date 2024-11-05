@@ -1,7 +1,7 @@
-import HeroImg from "@/app/components/HeroImg";
-import HeroInfo from "@/app/components/HeroInfo";
+import HeroImg from "./HeroImg";
+import HeroInfo from "./HeroInfo";
 
-export default function HeroSection() {
+export default function Hero() {
     return (
         <div className="flex justify-between mt-14 items-center">
             <HeroInfo />
