@@ -20,7 +20,7 @@ export type LangProviderValueType = {
     toggleLanguage: () => void;
 };
 
-export type AvailableGridColsSizes = "small" | "medium" |  "big";
+export type AvailableGridColsSizes = "small" | "medium" | "big";
 export type AvailableGridRowsSizes = "small" | "medium" | "big";
 
 export type sizePropValue = {
@@ -41,4 +41,9 @@ export type ProjectType = {
 };
 
 export type simpleCubeSizesPropNamesType = "big" | "middle" | "small";
-export type simpleCubeSizesInfoType = Record<simpleCubeSizesPropNamesType, string>;
+export type simpleCubeSizesInfoType = Record<
+    simpleCubeSizesPropNamesType,
+    string
+>;
+
+export type positionType = { x: number; y: number };

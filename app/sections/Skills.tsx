@@ -1,7 +1,6 @@
-import React from 'react'
+import React from "react";
+import Skills from "../components/skills";
 
-export default function Skills() {
-  return (
-    <Skills />
-  )
+export default function SkillsSection() {
+    return <Skills />;
 }
