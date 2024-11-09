@@ -2,7 +2,11 @@
 
 import { positionType } from "../definitions";
 
-export type positionsTakenType = Record<string, positionType>;
+export type resultType = { [key: string]: { x: string; y: string } };
+
+function px(num: number) {
+  return `${num}px`;
+}
 
 export default function getRandomPositions({
   contSizeX,
@@ -14,14 +18,13 @@ export default function getRandomPositions({
   contSizeY: number;
   numOfPos: number;
   elSize: number;
-}): positionsTakenType {
-  const positionsTaken: positionsTakenType = {};
+}) {
+  const positionsTaken: positionType[] = [];
   const maxAttempts = numOfPos * 10; // Increase attempts to avoid infinite loops
   let attempts = 0;
-  let successFullAttempts = 0;
 
   function isOverlapping(newPos: positionType) {
-    return Object.values(positionsTaken).some(({ x, y }) => {
+    return positionsTaken.some(({ x, y }) => {
       const distance = Math.sqrt(
         Math.pow(newPos.x - x, 2) + Math.pow(newPos.y - y, 2)
       );
@@ -33,21 +36,20 @@ export default function getRandomPositions({
     return Math.floor(Math.random() * (max - min)) + min;
   }
 
-  while (
-    Object.keys(positionsTaken).length < numOfPos &&
-    attempts < maxAttempts
-  ) {
+  while (positionsTaken.length < numOfPos && attempts < maxAttempts) {
     const x = getRandomNumber(0, contSizeX - elSize);
     const y = getRandomNumber(0, contSizeY - elSize);
     const newPos: positionType = { x: x + elSize / 2, y: y + elSize / 2 };
 
     if (!isOverlapping(newPos)) {
-      positionsTaken["pos" + successFullAttempts] = newPos;
-
-      successFullAttempts++;
+      positionsTaken.push(newPos);
     }
     attempts++;
   }
 
-  return positionsTaken;
+  const result: resultType = positionsTaken.reduce((acc, { x, y }, i) => {
+    return { ...acc, [`pos${i}`]: { x: px(x), y: px(y) } };
+  }, {});
+
+  return result;
 }

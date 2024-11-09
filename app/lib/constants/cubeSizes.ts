@@ -1,4 +1,4 @@
-import type { simpleCubeSizesInfoType } from "./../definitions";
+import type { simpleCubeSizesInfoType } from "../definitions";
 import { GridColsType, GridRowsType } from "../definitions";
 
 export const GridCols: GridColsType = {

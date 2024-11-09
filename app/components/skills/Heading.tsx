@@ -1,27 +1,28 @@
 "use client";
 
 import getRandomPositions, {
-  positionsTakenType,
+  resultType,
 } from "@/app/lib/utils/getRandomPositions";
 import CubeInDots from "../utils/CubeInDots";
 import LogoInLines from "../utils/LogoInLines";
 import SectionHeading from "../utils/SectionHeading";
 import SimpleCube from "../utils/SimpleCube";
-import {  useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Heading() {
-  const [coords, setCoords] = useState<positionsTakenType>();
+  const [coords, setCoords] = useState<resultType | null>(null);
 
-  useState(() => {
+  useEffect(() => {
     setCoords(
       getRandomPositions({
         contSizeX: 391,
-        contSizeY: 391,
+        contSizeY: 290,
         numOfPos: 5,
-        elSize: 84,
+        elSize: 90,
       })
     );
-  });
+  }, []);
+
 
   return (
     <section className="w-[391px] ">
@@ -33,15 +34,20 @@ export default function Heading() {
           style={{ left: coords?.pos1.x, top: coords?.pos1.y }}
         />
 
-        <SimpleCube size="middle" className="top-0 right-11" />
-        <LogoInLines className="bottom-[29px]" />
+        <SimpleCube
+          size="middle"
+          style={{ left: coords?.pos3.x, top: coords?.pos3.y }}
+        />
+        <LogoInLines style={{ left: coords?.pos4.x, top: coords?.pos4.y }} />
         <CubeInDots
           xSize="medium"
           ySize="big"
-          //   className="bottom-[70px] right-[100px]"
           style={{ left: coords?.pos2.x, top: coords?.pos2.y }}
         />
-        <SimpleCube size="small" className="bottom-0 right-0" />
+        <SimpleCube
+          size="small"
+          style={{ left: coords?.pos3.x, top: coords?.pos3.y }}
+        />
       </div>
     </section>
   );
