@@ -20,6 +20,7 @@ export default function HoverLinkIcon({
                         onMouseEnter={onMouseEnter}
                         onMouseLeave={onMouseLeave}
                         target="_blank"
+                        rel="noreferrer"        
                 >
                         <Icon sx={{ color }} />
                 </a>

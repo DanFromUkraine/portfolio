@@ -16,7 +16,7 @@ export default function SimpleCube({
     <span
       className={clsx(
         simpleCubeSizes[size],
-        "border border-white",
+        "border border-white absolute",
         className
       )}
       style={style}

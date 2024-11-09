@@ -15,19 +15,18 @@ export default function Heading() {
   useEffect(() => {
     setCoords(
       getRandomPositions({
-        contSizeX: 391,
-        contSizeY: 290,
+        contSizeX: 491,
+        contSizeY: 390,
         numOfPos: 5,
-        elSize: 90,
+        elSize: 100,
       })
     );
   }, []);
 
-
   return (
-    <section className="w-[391px] ">
+    <section className="w-[391px] h-[391px]">
       <SectionHeading>Skills</SectionHeading>
-      <div className="ml-8 mt-3 w-full h-[289px] mr-2.5 relative">
+      <div className="ml-8 mt-3 w-full mr-2.5 relative">
         <CubeInDots
           xSize="medium"
           ySize="big"
@@ -36,9 +35,9 @@ export default function Heading() {
 
         <SimpleCube
           size="middle"
-          style={{ left: coords?.pos3.x, top: coords?.pos3.y }}
+          style={{ left: coords?.pos0.x, top: coords?.pos0.y }}
         />
-        <LogoInLines style={{ left: coords?.pos4.x, top: coords?.pos4.y }} />
+        <LogoInLines style={{ left: coords?.pos4?.x, top: coords?.pos4.y }} />
         <CubeInDots
           xSize="medium"
           ySize="big"

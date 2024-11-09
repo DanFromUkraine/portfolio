@@ -6,20 +6,20 @@ import clsx from "clsx";
 import React, { useContext } from "react";
 
 export default function AlternativeLanguage({
-        isMenuOpened,
+  isMenuOpened,
 }: {
-        isMenuOpened: boolean;
+  isMenuOpened: boolean;
 }) {
-        const { language, toggleLanguage } = useContext(Lang);
-        return (
-                <span
-                        onClick={toggleLanguage}
-                        onKeyDown={enterHandler(toggleLanguage)}
-                        className={clsx({ hidden: !isMenuOpened }, "w-full")}
-                >
-                        <span className="gray-border absolute p-2" tabIndex={0}>
-                                {getOpositeLang(language).toLocaleUpperCase()}
-                        </span>
-                </span>
-        );
+  const { language, toggleLanguage } = useContext(Lang);
+  return (
+    <button
+      onClick={toggleLanguage}
+      onKeyDown={enterHandler(toggleLanguage)}
+      className={clsx({ hidden: !isMenuOpened }, "w-full")}
+    >
+      <span className="gray-border absolute p-2">
+        {getOpositeLang(language).toLocaleUpperCase()}
+      </span>
+    </button>
+  );
 }
