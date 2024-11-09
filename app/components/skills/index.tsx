@@ -1,3 +1,5 @@
+"use client";
+
 import Heading from "./Heading";
 
 export default function Skills() {
@@ -5,5 +7,5 @@ export default function Skills() {
     <section>
       <Heading />
     </section>
-  )
+  );
 }
