@@ -52,7 +52,7 @@ export default function CubeInDots({
         className,
         colsObj.class,
         rowsObj.class,
-        "grid gap-4 absolute  w-fit h-fit",
+        "grid gap-4 absolute  w-fit h-fit max-xl:gap-2.5",
         {
           "gap-2.5": xSize === "medium",
         }
