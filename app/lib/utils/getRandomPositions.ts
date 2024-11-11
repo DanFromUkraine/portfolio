@@ -1,6 +1,4 @@
-"use client";
-
-import { positionType } from "../definitions";
+import type { positionType, randomPosArgs } from "../definitions";
 
 export type resultType = { [key: string]: { x: string; y: string } };
 
@@ -8,17 +6,12 @@ function px(num: number) {
   return `${num}px`;
 }
 
-export default function getRandomPositions({
+export function getRandomPositions({
   contSizeX,
   contSizeY,
   numOfPos,
   elSize,
-}: {
-  contSizeX: number;
-  contSizeY: number;
-  numOfPos: number;
-  elSize: number;
-}) {
+}: randomPosArgs) {
   const positionsTaken: positionType[] = [];
   const maxAttempts = numOfPos * 10; // Increase attempts to avoid infinite loops
   let attempts = 0;
