@@ -48,6 +48,8 @@ export type simpleCubeSizesInfoType = Record<
 
 export type positionType = { x: number; y: number };
 
+export type stylePosType = { left: number; top: number };
+
 export type skillsType = Record<string, string[]>;
 
 export type randomPosArgs = {

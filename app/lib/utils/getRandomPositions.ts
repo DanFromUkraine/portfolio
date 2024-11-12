@@ -1,6 +1,6 @@
-import type { positionType, randomPosArgs } from "../definitions";
+import type { randomPosArgs, stylePosType } from "../definitions";
 
-export type resultType = { [key: string]: { x: string; y: string } };
+export type resultType = { [key: string]: { left: string; top: string } };
 
 function px(num: number) {
   return `${num}px`;
@@ -12,14 +12,14 @@ export function getRandomPositions({
   numOfPos,
   elSize,
 }: randomPosArgs) {
-  const positionsTaken: positionType[] = [];
+  const positionsTaken: stylePosType[] = [];
   const maxAttempts = numOfPos * 10; // Increase attempts to avoid infinite loops
   let attempts = 0;
 
-  function isOverlapping(newPos: positionType) {
-    return positionsTaken.some(({ x, y }) => {
+  function isOverlapping(newPos: stylePosType) {
+    return positionsTaken.some(({ left, top }) => {
       const distance = Math.sqrt(
-        Math.pow(newPos.x - x, 2) + Math.pow(newPos.y - y, 2)
+        Math.pow(newPos.left - left, 2) + Math.pow(newPos.top - top, 2)
       );
       return distance <= elSize;
     });
@@ -30,9 +30,12 @@ export function getRandomPositions({
   }
 
   while (positionsTaken.length < numOfPos && attempts < maxAttempts) {
-    const x = getRandomNumber(0, contSizeX - elSize);
-    const y = getRandomNumber(0, contSizeY - elSize);
-    const newPos: positionType = { x: x + elSize / 2, y: y + elSize / 2 };
+    const left = getRandomNumber(0, contSizeX - elSize);
+    const top = getRandomNumber(0, contSizeY - elSize);
+    const newPos: stylePosType = {
+      left: left + elSize / 2,
+      top: top + elSize / 2,
+    };
 
     if (!isOverlapping(newPos)) {
       positionsTaken.push(newPos);
@@ -40,8 +43,8 @@ export function getRandomPositions({
     attempts++;
   }
 
-  const result: resultType = positionsTaken.reduce((acc, { x, y }, i) => {
-    return { ...acc, [`pos${i}`]: { x: px(x), y: px(y) } };
+  const result: resultType = positionsTaken.reduce((acc, { left, top }, i) => {
+    return { ...acc, [`pos${i}`]: { left: px(left), top: px(top) } };
   }, {});
 
   return result;
