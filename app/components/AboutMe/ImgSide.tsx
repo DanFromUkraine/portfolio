@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import CubeInDots from "../utils/CubeInDots";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import useReadWidth from "@/app/lib/utils/hooks/useWidth";
 import { useRandomPositions } from "@/app/lib/utils/hooks/useGetRandomPositions";
 

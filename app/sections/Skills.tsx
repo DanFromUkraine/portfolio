@@ -1,10 +1,5 @@
-"use client"
-
-import React from "react";
-// import Skills from "../components/skills";
-import dynamic from "next/dynamic";
+import Skills from "../components/skills";
 
 export default function SkillsSection() {
-    const NoSSRSkills = dynamic(() => import("../components/skills"), {ssr: false})
-    return <NoSSRSkills />
+  return <Skills />;
 }
