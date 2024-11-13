@@ -4,7 +4,7 @@ import SkillBox from "./SkillBox";
 
 export default function SkillsBoxesCont({ skills }: { skills: skillsType[] }) {
   return (
-    <section role="list" className="flex max-w-[42vw] h-fit">
+    <section role="list" className="flex w-full h-fit max-w-[584px]">
       {skills.map((skillBoxes, i) => (
         <div key={i} className="flex flex-col w-full">
           {Object.entries(skillBoxes).map(([groupName, skillsArray]) => (

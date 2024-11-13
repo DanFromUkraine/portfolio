@@ -27,11 +27,11 @@ export default function Heading() {
 
         <SimpleCube size="middle" style={coords?.pos1} />
         <LogoInLines style={coords?.pos2} />
-        <CubeInDots xSize="medium" ySize="big" style={coords?.pos3} />
+        <CubeInDots xSize="medium" ySize="big" style={coords?.pos3} className="max-xl:hidden"/>
         <SimpleCube
           size="small"
           style={coords?.pos4}
-          className={width < 400 ? "!hidden" : ""}
+          className="max-xl:hidden"
         />
       </div>
     </section>
