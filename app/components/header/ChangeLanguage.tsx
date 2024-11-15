@@ -15,12 +15,15 @@ export default function ChangeLanguage() {
   const [isMenuOpened, toggleIsMenuOpened] = useMenuOpened();
 
   return (
-    <section className="flex flex-col  relative w-11">
+    <section className="flex flex-col  relative w-11 hover:text-secondary_hover">
       <ToggleMenuOpened
         isMenuOpened={isMenuOpened}
         toggleIsMenuOpened={toggleIsMenuOpened}
       />
-      <AlternativeLanguage isMenuOpened={isMenuOpened} toggleIsMenuOpened={toggleIsMenuOpened}/>
+      <AlternativeLanguage
+        isMenuOpened={isMenuOpened}
+        toggleIsMenuOpened={toggleIsMenuOpened}
+      />
     </section>
   );
 }

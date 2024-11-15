@@ -1,28 +1,16 @@
-"use client";
-
-import { SECONDARY, SECONDARY_HOVER } from "@/app/lib/constants/colors";
 import { Icon } from "@/app/lib/definitions";
-import { useCallback, useState } from "react";
+import MuiIcon from "./MuiIcon";
 
 export default function HoverLinkIcon({
-        Icon,
-        href,
+  Icon,
+  href,
 }: {
-        Icon: Icon;
-        href: string;
+  Icon: Icon;
+  href: string;
 }) {
-        const [color, setColor] = useState(SECONDARY);
-        const onMouseEnter = useCallback(() => setColor(SECONDARY_HOVER), []),
-                onMouseLeave = useCallback(() => setColor(SECONDARY), []);
-        return (
-                <a
-                        href={href}
-                        onMouseEnter={onMouseEnter}
-                        onMouseLeave={onMouseLeave}
-                        target="_blank"
-                        rel="noreferrer"        
-                >
-                        <Icon sx={{ color }} />
-                </a>
-        );
+  return (
+    <a href={href} target="_blank" rel="noreferrer">
+      <MuiIcon MuiIcon={Icon} />
+    </a>
+  );
 }

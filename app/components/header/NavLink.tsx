@@ -6,22 +6,22 @@ import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
 export default function NavLink({
-        linkContent: { href, label },
+  linkContent: { href, label },
 }: {
-        linkContent: LinkType;
+  linkContent: LinkType;
 }) {
-        const currentPathname = usePathname();
-        const isLinkToCurrPath = currentPathname === href;
+  const currentPathname = usePathname();
+  const isLinkToCurrPath = currentPathname === href;
 
-        return (
-                <Link href={href}>
-                        <HashtagLabel
-                                className={clsx("text-base transition duration-100", {
-                                        "last:!text-white": isLinkToCurrPath,
-                                })}
-                        >
-                                {label}
-                        </HashtagLabel>
-                </Link>
-        );
+  return (
+    <Link href={href}>
+      <HashtagLabel
+        className={clsx("text-base transition duration-100", {
+          "last:!text-white": isLinkToCurrPath,
+        })}
+      >
+        {label}
+      </HashtagLabel>
+    </Link>
+  );
 }
