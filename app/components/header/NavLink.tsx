@@ -1,7 +1,7 @@
 "use client";
 import { LinkType } from "@/app/lib/definitions";
 import Link from "next/link";
-import HashtagLabel from "../utils/#label";
+import HashtagLabel from "../utils/SectionLabel";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 

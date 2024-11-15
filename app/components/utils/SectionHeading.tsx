@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import HashtagLabel from "./#label";
+import HashtagLabel from "./SectionLabel";
 import PurpleLine from "./PurpleLine";
 
 export default function SectionHeading({
