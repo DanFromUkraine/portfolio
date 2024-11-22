@@ -1,7 +1,7 @@
 export default function TechStackItem({
-    techStackItem: content,
+  techStackItem: content,
 }: {
-    techStackItem: string;
+  techStackItem: string;
 }) {
-    return <p className="text-secondary">{content}</p>;
+  return <p className="text-secondary">{content}</p>;
 }

@@ -21,3 +21,16 @@ TODOs:
 14. Start about-me page
 15. start contacts page
 16. gather all my projects. 
+17. I want to move components, that implement section, to sections dir. More utility components keep in components folder
+
+18. Delete ProjectDescription component
+19. Delete ProjectTitle component
+20. Delete ViewAll component
+21. Delete TechStackItem component
+
+^
+|
+
+I want to complete tasks [18; 21] as there's a bit too many component in projects section. But I want to keep expressivness of it's names using area's attributes
+
+22. Move common styles to globals.css 

@@ -1,7 +1,7 @@
 export default function ProjectTitle({
-    children: title,
+  children: title,
 }: {
-    children: string;
+  children: string;
 }) {
-    return <h3 className="font-medium text-2xl ">{title}</h3>;
+  return <h3 className="font-medium text-2xl ">{title}</h3>;
 }

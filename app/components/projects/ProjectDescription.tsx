@@ -1,7 +1,7 @@
 export default function ProjectDescription({
-    children: description,
+  children: description,
 }: {
-    children: string;
+  children: string;
 }) {
-    return <p className="text-secondary ">{description}</p>;
+  return <p className="text-secondary ">{description}</p>
 }
